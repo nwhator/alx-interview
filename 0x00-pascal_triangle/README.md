@@ -17,7 +17,7 @@ Pascal's Triangle is a triangular array of numbers, where each number is the sum
 1. Clone the repository to your local machine.
 2. Navigate to the `0x00-pascal_triangle` directory.
 3. Explore the `0-pascal_triangle.py` script to understand the implementation of Pascal's Triangle generation.
-4. Run the provided unit tests in the `tests` directory to verify the correctness of the functions.
+4. Run the provided tests in the `tests` directory to verify the correctness of the functions.
 
 ## Contribution
 
