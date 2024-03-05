@@ -1,32 +1,42 @@
 #!/usr/bin/python3
 """Pascal Triangle Interview Challenge"""
 
+
 def pascal_triangle(n):
     """
-    Generate Pascal's triangle of n rows.
-    
+    Generate Pascal's triangle up to the nth row.
+
     Args:
-        n (int): The number of rows in the Pascal's triangle.
-        
+        n (int): Number of rows to generate in the Pascal's triangle.
+
     Returns:
         list: A list of lists representing the Pascal's triangle.
     """
-
     # Check if n is less than or equal to 0
     if n <= 0:
         return []
 
-    # Generate Pascal's Triangle using nested list comprehension
-    triangle = [[0] * (i + 1) for i in range(n)]
+    # Initialize Pascal's triangle list
+    triangle = []
 
-    # Populate the triangle except for the first and last element of each row
+    # Iterate over each row
     for i in range(n):
-        triangle[i][0] = 1  # First element of each row is always 1
-        triangle[i][-1] = 1  # Last element of each row is always 1
-    
-    # Populate the triangle except for the first row
-    for i in range(2, n):
+        # Initialize a new row with zeros
+        new_row = [0] * (i + 1)
+
+        # Set the first and last element of the row to 1
+        new_row[0] = 1
+        new_row[-1] = 1
+
+        # Calculate values for non-edge elements
         for j in range(1, i):
-            triangle[i][j] = triangle[i - 1][j - 1] + triangle[i - 1][j]
-    
+            # Get the values from the previous row
+            a = triangle[i - 1][j]
+            b = triangle[i - 1][j - 1]
+            # Calculate the new value for the current position
+            new_row[j] = a + b
+
+        # Append the new row to the triangle
+        triangle.append(new_row)
+
     return triangle
