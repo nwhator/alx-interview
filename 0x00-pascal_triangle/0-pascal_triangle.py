@@ -18,9 +18,14 @@ def pascal_triangle(n):
 
     # Generate Pascal's Triangle using nested list comprehension
     triangle = [[0] * (i + 1) for i in range(n)]
+
+    # Populate the triangle except for the first and last element of each row
+    for i in range(n):
+        triangle[i][0] = 1  # First element of each row is always 1
+        triangle[i][-1] = 1  # Last element of each row is always 1
     
     # Populate the triangle except for the first row
-    for i in range(1, n):
+    for i in range(2, n):
         for j in range(1, i):
             triangle[i][j] = triangle[i - 1][j - 1] + triangle[i - 1][j]
     
