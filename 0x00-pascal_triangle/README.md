@@ -21,7 +21,7 @@ Pascal's Triangle is a triangular array of numbers, where each number is the sum
 
 ## Contribution
 
-Contributions are welcome! If you have any improvements, optimizations, or additional features to suggest, please feel free to submit a pull request. Let's collaborate to enhance Pascal's Triangle implementations and make them even more efficient and versatile!
+Contributions are welcome! If you have any improvements, optimizations, or additional features to suggest. Please feel free to submit a pull request. Let's collaborate to enhance Pascal's Triangle implementations and make them even more efficient and versatile!
 
 ## Get Started
 
