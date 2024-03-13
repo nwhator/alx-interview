@@ -28,7 +28,7 @@ def canUnlockAll(boxes):
         key = keys.pop()
 
         """ If key opens a box yet to be opened """
-        if key < len(boxes) and key not in opened_boxes:
+        if 0 <= key < len(boxes) and key not in opened_boxes:
             """ Adds box to the opened boxes set """
             opened_boxes.add(key)
             """ Adds keys in opened box to keys set """
