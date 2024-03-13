@@ -19,17 +19,14 @@ def canUnlockAll(boxes):
     """ Initialize a set to keep track of locked boxes """
     locked = set()
     
-    """ Iterate through each box and check if it can be opened """
-    for i, box in enumerate(boxes):
-        if i not in keys:
-            locked.add(i)
-        else:
-            keys |= set(box)
-    
-    """ Loop through locked boxes and try to unlock using available keys """
-    for key in list(locked):
+    for box in boxes:
+        ibox = boxes.index(box)
+        if ibox not in keys:
+            if max(keys) > ibox:
+                locked.add(ibox)
+                continue
+        keys |= set(box)
+    for key in locked:
         if key in keys:
             keys |= set(boxes[key])
-            locked.remove(key)
-    
-    return not bool(locked)
+    return not bool(locked - keys)
